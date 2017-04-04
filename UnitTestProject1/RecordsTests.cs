@@ -3,20 +3,36 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using Records.App.Utilities;
 using Records.App.Concrete;
+using testapphaha.Interfaces;
 
 namespace Records.Tests
 {
     [TestClass]
     public class RecordsTests
     {
-        private RecordLicenser _recordLicenser;
+        private IRecordLicenser _recordLicenser;
 
         [TestInitialize]
         public void TestInitialize()
         {
             var inputFiles = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" };
 
+            //Manual initialisation for this small app, instead of using a proper Ioc container like ninject, unity or structuremap
             _recordLicenser = new RecordLicenser(inputFiles);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         [TestMethod]

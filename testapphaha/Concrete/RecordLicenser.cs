@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using testapphaha.Interfaces;
 
 namespace Records.App.Concrete
 {
     /// <summary>
     /// Represents the entity which will process information about records and licenses
     /// </summary>
-    public class RecordLicenser
+    public class RecordLicenser:IRecordLicenser
     {
         private readonly IEnumerable<RecordModel> recordList;
         private readonly IEnumerable<LicenseModel> licenseList;

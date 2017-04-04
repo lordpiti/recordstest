@@ -8,6 +8,6 @@ namespace testapphaha.Interfaces
 {
     public interface IRecordLicenser
     {
-
+        string[] getValidRecords(string partner, string dateString);
     }
 }
