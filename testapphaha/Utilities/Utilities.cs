@@ -10,7 +10,7 @@ namespace Records.App.Utilities
     public static class Utilities
     {
         /// <summary>
-        /// Given a date on the format "d MMM yyyy", "d MMMM yyyy", parse it
+        /// Convert a string with the format "d MMM yyyy" or "d MMMM yyyy" into a DateTime
         /// </summary>
         /// <param name="input">string date input</param>
         /// <returns>datetime with the parsed date</returns>

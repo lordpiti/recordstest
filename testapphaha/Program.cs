@@ -25,6 +25,7 @@ namespace Records.App
 
                 string[] linesLicenses = File.ReadAllLines(file2Path, Encoding.UTF8);
 
+                //Ignore the first three lines of each file, since it's for headers
                 var relevantLinesRecords = linesRecords.Skip(3);
                 var relevantLinesLicenses = linesLicenses.Skip(3);
 
