@@ -44,7 +44,7 @@ namespace Records.App
             }
             else
             {
-                Console.WriteLine("syntax is 'testapp <inputfile1> <inputfile2>'");
+                Console.WriteLine("syntax is '<exe file> <inputfile1> <inputfile2>'");
             }
         }
     }
