@@ -1,0 +1,15 @@
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\bin\Debug\testapphaha.exe
+D:\Repos\spacehive-datacollection\testapphaha\UnitTestProject1\bin\Debug\testapphaha.pdb
+C:\testapphaha\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\testapphaha\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\testapphaha\UnitTestProject1\bin\Debug\testapphaha.exe
+C:\testapphaha\UnitTestProject1\bin\Debug\testapphaha.pdb
+C:\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
