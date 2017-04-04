@@ -24,7 +24,7 @@ namespace testapphaha.Models
 
             Artist = substrings[0];
             Title = substrings[1];
-            Usages = substrings[2].Split(delimiter2).ToList();
+            Usages = substrings[2].Split(delimiter2).Select(x=>x.Trim()).ToList();
             StartDate = DateUtilities.parseDate(substrings[3]);
             EndDate = !string.IsNullOrEmpty(substrings[4]) ? (DateTime?)DateUtilities.parseDate(substrings[4]) : null;
             OriginalStringRead = line;
@@ -55,7 +55,8 @@ namespace testapphaha.Models
 
         public bool isAllowedUsage(string usage)
         {
-            return Usages.Any(x => usage == x);
+            return Usages.Any(x => usage.ToString()== x.ToString());
+
         }
 
         /// <summary>

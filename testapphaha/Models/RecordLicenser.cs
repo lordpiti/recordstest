@@ -42,6 +42,9 @@ namespace testapphaha.Models
 
             var licenceTypeString = licenseList.FirstOrDefault(x => x.Name == provider).Type;
 
+            var allowedDates = recordList.Where(x => x.isAllowedDate(date));
+            var allowedUsage = recordList.Where(x => x.isAllowedUsage(licenceTypeString));
+
             var result = this.recordList.Where(x => x.isAllowedDate(date) && x.isAllowedUsage(licenceTypeString))
                 .OrderBy(x=>x.Artist).ThenBy(x=>x.Title);
 

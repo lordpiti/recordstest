@@ -53,5 +53,22 @@ namespace UnitTestProject1
             CollectionAssert.AreEqual(expected, outputLines);
         }
 
+        [TestMethod]
+        public void Test_GetItems_ReturnTestCase2Output()
+        {
+            var inputFiles = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" };
+
+            var recordLicenser = new RecordLicenser(inputFiles);
+
+            var expected = new string[] {
+                "Monkey Claw|Motor Mouth|streaming|1st Mar 2011|",
+                "Tinie Tempah|Frisky (Live from SoHo)|streaming|1st Feb 2012|"
+            };
+
+            var outputLines = recordLicenser.getValidOnes("YouTube", "1st April 2012").ToArray();
+
+            CollectionAssert.AreEqual(expected, outputLines);
+        }
+
     }
 }
