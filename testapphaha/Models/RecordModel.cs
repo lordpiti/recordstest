@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Records.App.Models
 {
+    /// <summary>
+    /// Represents the information about a record
+    /// </summary>
     public class RecordModel
     {
         public RecordModel()
@@ -14,8 +17,8 @@ namespace Records.App.Models
 
         public RecordModel(string line)
         {
-            char delimiter = '|';
-            char delimiter2 = ',';
+            const char delimiter = '|';
+            const char delimiter2 = ',';
 
             string[] substrings = line.Split(delimiter);
 
@@ -24,7 +27,6 @@ namespace Records.App.Models
             Usages = substrings[2].Split(delimiter2).Select(x=>x.Trim()).ToList();
             StartDate = Utilities.Utilities.parseDate(substrings[3]);
             EndDate = !string.IsNullOrEmpty(substrings[4]) ? (DateTime?)Utilities.Utilities.parseDate(substrings[4]) : null;
-            OriginalStringRead = line;
             OriginalStartDate = substrings[3];
             OriginalEndDate = substrings[4];
         }
@@ -39,17 +41,25 @@ namespace Records.App.Models
 
         public DateTime? EndDate { get; set; }
 
-        public string OriginalStringRead { get; set; }
-
         public string OriginalStartDate { get; set; }
 
         public string OriginalEndDate { get; set; }
 
+        /// <summary>
+        /// Check if the record is allowed to be used in a specific date
+        /// </summary>
+        /// <param name="date">The specific date to be checked for the record</param>
+        /// <returns></returns>
         public bool isAllowedDate(DateTime date)
         {
             return (EndDate == null && StartDate < date) || (EndDate != null && (StartDate < date && date < EndDate));
         }
 
+        /// <summary>
+        /// Check if the record is allowed for an usage
+        /// </summary>
+        /// <param name="usage">The specific usage we want to check for that record</param>
+        /// <returns></returns>
         public bool isAllowedUsage(string usage)
         {
             return Usages.Any(x => usage== x);

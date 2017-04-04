@@ -1,5 +1,8 @@
 ﻿using System;
 using Records.App.Concrete;
+using System.Text;
+using System.IO;
+using System.Linq;
 
 namespace Records.App
 {
@@ -15,10 +18,28 @@ namespace Records.App
 
             //Create manually the instance of the object to use
             //Since it's very simple for this small app I don't use an Ioc container
-            var recordLicenser = new RecordLicenser(args);
+            //var recordLicenser = new RecordLicenser(args);
+
+            #region new one
+
+            var file1Path = args[0];
+            var file2Path = args[1];
+
+            string[] linesRecords = File.ReadAllLines(file1Path, Encoding.UTF8);
+
+            string[] linesLicenses = File.ReadAllLines(file2Path, Encoding.UTF8);
+
+            var relevantLinesRecords = linesRecords.Skip(3);
+            var relevantLinesLicenses = linesLicenses.Skip(3);
+
+            //Create manually the instance of the object to use
+            //Since it's very simple for this small app I don't use an Ioc container
+            var recordLicenser2 = new RecordLicenser(relevantLinesRecords, relevantLinesLicenses);
+
+            #endregion
 
             var dateString = "1st March 2012";
-            var validRecords = recordLicenser.getValidRecords(partner, dateString);
+            var validRecords = recordLicenser2.getValidRecords(partner, dateString);
 
             Console.WriteLine("Artist|Title|Usages|StartDate|EndDate");
             foreach (var item in validRecords)

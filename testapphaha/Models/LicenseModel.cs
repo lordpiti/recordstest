@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Records.App.Models
-{
+{   /// <summary>
+    /// Represents information about a license
+    /// </summary>
     public class LicenseModel
     {
         public LicenseModel()
@@ -15,7 +17,7 @@ namespace Records.App.Models
 
         public LicenseModel(string line)
         {
-            char delimiter = '|';
+            const char delimiter = '|';
             string[] substrings = line.Split(delimiter);
 
             Name = substrings[0];
