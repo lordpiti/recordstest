@@ -25,8 +25,9 @@ namespace Records.App
             var recordLicenser = new RecordLicenser(args);
 
             var dateString = "1st March 2012";
-            var theList = recordLicenser.getValidOnes(provider, dateString);
+            var theList = recordLicenser.getValidRecords(provider, dateString);
 
+            Console.WriteLine("Artist|Title|Usages|StartDate|EndDate");
             foreach (var item in theList)
             {
                 Console.WriteLine(item);

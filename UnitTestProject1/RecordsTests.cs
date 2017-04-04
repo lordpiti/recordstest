@@ -7,7 +7,7 @@ using Records.App.Concrete;
 namespace Records.Tests
 {
     [TestClass]
-    public class DateUtilitiesTests
+    public class RecordsTests
     {
         [TestMethod]
         public void Test_ParseDate_FullMonthDate_ReturnsRightDateTime()
@@ -47,7 +47,7 @@ namespace Records.Tests
                 "Tinie Tempah|Miami 2 Ibiza|digital download|1st Feb 2012|"
             };
 
-            var outputLines = recordLicenser.getValidOnes("ITunes", "1st March 2012");
+            var outputLines = recordLicenser.getValidRecords("ITunes", "1st March 2012");
 
             CollectionAssert.AreEqual(expected, outputLines);
         }
@@ -64,7 +64,7 @@ namespace Records.Tests
                 "Tinie Tempah|Frisky (Live from SoHo)|streaming|1st Feb 2012|"
             };
 
-            var outputLines = recordLicenser.getValidOnes("YouTube", "1st April 2012");
+            var outputLines = recordLicenser.getValidRecords("YouTube", "1st April 2012");
 
             CollectionAssert.AreEqual(expected, outputLines);
         }
@@ -83,7 +83,7 @@ namespace Records.Tests
                 "Tinie Tempah|Frisky (Live from SoHo)|streaming|1st Feb 2012|"
             };
 
-            var outputLines = recordLicenser.getValidOnes("YouTube", "27th Dec 2012");
+            var outputLines = recordLicenser.getValidRecords("YouTube", "27th Dec 2012");
 
             CollectionAssert.AreEqual(expected, outputLines);
         }

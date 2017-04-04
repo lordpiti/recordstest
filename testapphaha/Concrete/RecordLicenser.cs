@@ -36,11 +36,17 @@ namespace Records.App.Concrete
 
         }
         
-        public string[] getValidOnes(string provider, string dateString)
+        /// <summary>
+        /// Return the records allowed for a partner in a specific date
+        /// </summary>
+        /// <param name="partner"></param>
+        /// <param name="dateString"></param>
+        /// <returns></returns>
+        public string[] getValidRecords(string partner, string dateString)
         {
             var date = Utilities.Utilities.parseDate(dateString);
 
-            var licenceTypeString = licenseList.FirstOrDefault(x => x.Name == provider).Type;
+            var licenceTypeString = licenseList.FirstOrDefault(x => x.Name == partner).Type;
 
             var result = this.recordList.Where(x => x.isAllowedDate(date) && x.isAllowedUsage(licenceTypeString))
                 .OrderBy(x=>x.Artist).ThenBy(x=>x.Title);
