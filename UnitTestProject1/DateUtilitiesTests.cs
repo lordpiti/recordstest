@@ -23,7 +23,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void Test_ParseDate_charsMonthDate_ReturnsRightDateTime()
+        public void Test_ParseDate_3charsMonthDate_ReturnsRightDateTime()
         {
             var stringToParse = "3rd Mar 2012";
 
@@ -66,6 +66,25 @@ namespace UnitTestProject1
             };
 
             var outputLines = recordLicenser.getValidOnes("YouTube", "1st April 2012").ToArray();
+
+            CollectionAssert.AreEqual(expected, outputLines);
+        }
+
+        [TestMethod]
+        public void Test_GetItems_ReturnTestCase3Output()
+        {
+            var inputFiles = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" };
+
+            var recordLicenser = new RecordLicenser(inputFiles);
+
+            var expected = new string[] {
+                "Monkey Claw|Christmas Special|streaming|25st Dec 2012|31st Dec 2012",
+                "Monkey Claw|Iron Horse|streaming|1st June 2012|",
+                "Monkey Claw|Motor Mouth|streaming|1st Mar 2011|",
+                "Tinie Tempah|Frisky (Live from SoHo)|streaming|1st Feb 2012|"
+            };
+
+            var outputLines = recordLicenser.getValidOnes("YouTube", "27th Dec 2012").ToArray();
 
             CollectionAssert.AreEqual(expected, outputLines);
         }
