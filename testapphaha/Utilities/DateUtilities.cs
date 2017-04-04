@@ -27,50 +27,41 @@ namespace testapphaha.Utilities
             return date;
         }
 
-        public static DateTime parseDateFullMonth(string input)
-        {
-            int index = char.IsNumber(input, 1) ? 2 : 1;
-            input = input.Substring(0, index) + input.Substring(index + 2);
-            DateTime d = DateTime.ParseExact(input, "d MMMM yyyy", CultureInfo.InvariantCulture);
+        //public static string GetDaySuffix(int day)
+        //{
+        //    switch (day)
+        //    {
+        //        case 1:
+        //        case 21:
+        //        case 31:
+        //            return "st";
+        //        case 2:
+        //        case 22:
+        //            return "nd";
+        //        case 3:
+        //        case 23:
+        //            return "rd";
+        //        default:
+        //            return "th";
+        //    }
+        //}
 
-            return d;
-        }
-
-        public static string GetDaySuffix(int day)
-        {
-            switch (day)
-            {
-                case 1:
-                case 21:
-                case 31:
-                    return "st";
-                case 2:
-                case 22:
-                    return "nd";
-                case 3:
-                case 23:
-                    return "rd";
-                default:
-                    return "th";
-            }
-        }
-
-        public static string FormatSpecialDateTime(DateTime? dt)
-        {
-            if (dt == null)
-            {
-                return null;
-            }
-            else
-            {
-                var dtConcrete = (DateTime)dt;
-                return string.Format("{0}{1} {2}",
-                                  dtConcrete.Day,
-                                  GetDaySuffix(dtConcrete.Day),
-                                  dtConcrete.ToString("MMM yyyy", CultureInfo.InvariantCulture));
-            }
+        //public static string FormatSpecialDateTime(DateTime? dt)
+        //{
+        //    if (dt == null)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        var dtConcrete = (DateTime)dt;
+        //        return string.Format("{0}{1} {2}",
+        //                          dtConcrete.Day,
+        //                          GetDaySuffix(dtConcrete.Day),
+        //                          dtConcrete.ToString("MMM yyyy", CultureInfo.InvariantCulture));
+        //    }
 
 
-        }
+        //}
     }
 }

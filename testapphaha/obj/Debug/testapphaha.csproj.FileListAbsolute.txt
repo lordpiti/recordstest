@@ -10,3 +10,9 @@ C:\testapphaha\testapphaha\obj\Debug\testapphaha.pdb
 C:\testapphaha\testapphaha\bin\Debug\testapphaha.exe
 C:\testapphaha\testapphaha\bin\Debug\testapphaha.pdb
 C:\testapphaha\testapphaha\obj\Debug\testapphaha.csprojResolveAssemblyReference.cache
+C:\repos\recordstest\testapphaha\bin\Debug\testapphaha.exe.config
+C:\repos\recordstest\testapphaha\obj\Debug\testapphaha.exe
+C:\repos\recordstest\testapphaha\obj\Debug\testapphaha.pdb
+C:\repos\recordstest\testapphaha\bin\Debug\testapphaha.exe
+C:\repos\recordstest\testapphaha\bin\Debug\testapphaha.pdb
+C:\repos\recordstest\testapphaha\obj\Debug\testapphaha.csprojResolveAssemblyReference.cache

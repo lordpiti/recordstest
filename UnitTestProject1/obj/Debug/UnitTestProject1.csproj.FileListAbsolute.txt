@@ -13,3 +13,10 @@ C:\testapphaha\UnitTestProject1\bin\Debug\testapphaha.pdb
 C:\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
 C:\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\testapphaha\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\repos\recordstest\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\repos\recordstest\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\repos\recordstest\UnitTestProject1\bin\Debug\testapphaha.exe
+C:\repos\recordstest\UnitTestProject1\bin\Debug\testapphaha.pdb
+C:\repos\recordstest\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\repos\recordstest\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\repos\recordstest\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

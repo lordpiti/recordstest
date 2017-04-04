@@ -9,7 +9,7 @@ namespace UnitTestProject1
     public class DateUtilitiesTests
     {
         [TestMethod]
-        public void TestParseFullMonthDate_ReturnsRightDateTime()
+        public void Test_ParseDate_FullMonthDate_ReturnsRightDateTime()
         {
             var stringToParse = "1st June 2012";
 
@@ -21,7 +21,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void TestParse3charsMonthDate_ReturnsRightDateTime()
+        public void Test_ParseDate_charsMonthDate_ReturnsRightDateTime()
         {
             var stringToParse = "3rd Mar 2012";
 
@@ -31,5 +31,14 @@ namespace UnitTestProject1
 
             Assert.AreEqual(date, expectedDate);
         }
+
+        [TestMethod]
+        public void Test_GetItems()
+        {
+            var list = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" }; 
+
+            var hh = new RecordLicenser()
+        }
+
     }
 }

@@ -14,23 +14,20 @@ namespace testapphaha
     {
         static void Main(string[] args)
         {
-            //string text = File.ReadAllText(@"D:\Repos\spacehive-datacollection\testapphaha\testapphaha\InputFiles\input1.txt", Encoding.UTF8);
-
-            
-
             Console.WriteLine("enter provider");
             var provider = Console.ReadLine();
             Console.WriteLine("enter date");
             var dateToCheck = Console.ReadLine();
+            args = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" };
 
             var recordLicenser = new RecordLicenser(args);
 
-            var date = DateUtilities.parseDateFullMonth("1st March 2012");
-            var theList = recordLicenser.getValidOnes(provider, date);
+            var dateString = "1st March 2012";
+            var theList = recordLicenser.getValidOnes(provider, dateString);
 
             foreach (var item in theList)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item);
             }
             Console.ReadLine();
         }

@@ -4,13 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using testapphaha.Utilities;
 
 namespace testapphaha.Models
 {
     public class RecordLicenser
     {
-        //http://stackoverflow.com/questions/35747303/how-to-convert-datetime-field-to-string-like-1st-feb-2011
-
         private readonly IEnumerable<RecordModel> recordList;
         private readonly IEnumerable<LicenseModel> licenseList;
 
@@ -21,6 +20,9 @@ namespace testapphaha.Models
 
         public RecordLicenser(string[] args)
         {
+            var file1Path = args[0];
+            var file2Path = args[1];
+
             string[] linesRecords = File.ReadAllLines(@"C:\testapphaha\testapphaha\InputFiles\input1.txt", Encoding.UTF8);
 
             string[] linesLicenses = File.ReadAllLines(@"C:\testapphaha\testapphaha\InputFiles\input2.txt", Encoding.UTF8);
@@ -34,13 +36,16 @@ namespace testapphaha.Models
 
         }
         
-        public IEnumerable<RecordModel> getValidOnes(string provider, DateTime date)
+        public IEnumerable<string> getValidOnes(string provider, string dateString)
         {
+            var date = DateUtilities.parseDate(dateString);
+
             var licenceTypeString = licenseList.FirstOrDefault(x => x.Name == provider).Type;
 
-            var result = this.recordList.Where(x => x.isAllowedDate(date) && x.isAllowedUsage(licenceTypeString)).OrderBy(x=>x.Artist).ThenBy(x=>x.Title);
+            var result = this.recordList.Where(x => x.isAllowedDate(date) && x.isAllowedUsage(licenceTypeString))
+                .OrderBy(x=>x.Artist).ThenBy(x=>x.Title);
 
-            return result;
+            return result.Select(x=>x.OriginalStringRead);
         }
     }
 }
