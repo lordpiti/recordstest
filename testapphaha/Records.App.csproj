@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IRecordLicenser.cs" />
     <Compile Include="Models\LicenseModel.cs" />
-    <Compile Include="Models\RecordLicenser.cs" />
+    <Compile Include="Concrete\RecordLicenser.cs" />
     <Compile Include="Models\RecordModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

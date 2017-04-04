@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Records.App.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using testapphaha.Utilities;
 
-namespace testapphaha.Models
+namespace Records.App.Concrete
 {
     public class RecordLicenser
     {
@@ -36,31 +36,21 @@ namespace testapphaha.Models
 
         }
         
-        public IEnumerable<string> getValidOnes(string provider, string dateString)
+        public string[] getValidOnes(string provider, string dateString)
         {
-            var date = DateUtilities.parseDate(dateString);
+            var date = Utilities.Utilities.parseDate(dateString);
 
             var licenceTypeString = licenseList.FirstOrDefault(x => x.Name == provider).Type;
 
             var result = this.recordList.Where(x => x.isAllowedDate(date) && x.isAllowedUsage(licenceTypeString))
                 .OrderBy(x=>x.Artist).ThenBy(x=>x.Title);
 
-            var finalList = new List<RecordModel>();
-
-            foreach (var item in result)
-            {
-                var newItem = new RecordModel() {
-                    Artist = item.Artist,
-                    Usages = new List<string> { licenceTypeString },
-                    Title = item.Title,
-                    OriginalStartDate = item.OriginalStartDate,
-                    OriginalEndDate = item.OriginalEndDate
-                };
-
-                finalList.Add(newItem);
-            }
-
-            return finalList.Select(x=>x.ToString());
+            return result.Select(x=> string.Format("{0}|{1}|{2}|{3}|{4}",
+                x.Artist,
+                x.Title,
+                licenceTypeString,
+                x.OriginalStartDate,
+                x.OriginalEndDate)).ToArray();
         }
     }
 }

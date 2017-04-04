@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using testapphaha;
-using testapphaha.Utilities;
-using testapphaha.Models;
 using System.Linq;
+using Records.App.Utilities;
+using Records.App.Concrete;
 
-namespace UnitTestProject1
+namespace Records.Tests
 {
     [TestClass]
     public class DateUtilitiesTests
@@ -15,7 +14,7 @@ namespace UnitTestProject1
         {
             var stringToParse = "1st June 2012";
 
-            var date = DateUtilities.parseDate(stringToParse);
+            var date = Utilities.parseDate(stringToParse);
 
             var expectedDate = new DateTime(2012,6,1);
 
@@ -27,7 +26,7 @@ namespace UnitTestProject1
         {
             var stringToParse = "3rd Mar 2012";
 
-            var date = DateUtilities.parseDate(stringToParse);
+            var date = Utilities.parseDate(stringToParse);
 
             var expectedDate = new DateTime(2012, 3, 3);
 
@@ -48,7 +47,7 @@ namespace UnitTestProject1
                 "Tinie Tempah|Miami 2 Ibiza|digital download|1st Feb 2012|"
             };
 
-            var outputLines = recordLicenser.getValidOnes("ITunes", "1st March 2012").ToArray();
+            var outputLines = recordLicenser.getValidOnes("ITunes", "1st March 2012");
 
             CollectionAssert.AreEqual(expected, outputLines);
         }
@@ -65,7 +64,7 @@ namespace UnitTestProject1
                 "Tinie Tempah|Frisky (Live from SoHo)|streaming|1st Feb 2012|"
             };
 
-            var outputLines = recordLicenser.getValidOnes("YouTube", "1st April 2012").ToArray();
+            var outputLines = recordLicenser.getValidOnes("YouTube", "1st April 2012");
 
             CollectionAssert.AreEqual(expected, outputLines);
         }
@@ -84,7 +83,7 @@ namespace UnitTestProject1
                 "Tinie Tempah|Frisky (Live from SoHo)|streaming|1st Feb 2012|"
             };
 
-            var outputLines = recordLicenser.getValidOnes("YouTube", "27th Dec 2012").ToArray();
+            var outputLines = recordLicenser.getValidOnes("YouTube", "27th Dec 2012");
 
             CollectionAssert.AreEqual(expected, outputLines);
         }

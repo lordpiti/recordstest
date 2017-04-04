@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testapphaha", "testapphaha\testapphaha.csproj", "{0469F354-C92F-4224-A38A-71003264082C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.App", "testapphaha\Records.App.csproj", "{0469F354-C92F-4224-A38A-71003264082C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{ACC4D1D2-E97F-44C9-87B5-86A7765822AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Tests", "UnitTestProject1\Records.Tests.csproj", "{ACC4D1D2-E97F-44C9-87B5-86A7765822AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

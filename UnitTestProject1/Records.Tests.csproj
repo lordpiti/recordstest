@@ -57,9 +57,9 @@
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\testapphaha\testapphaha.csproj">
+    <ProjectReference Include="..\testapphaha\Records.App.csproj">
       <Project>{0469f354-c92f-4224-a38a-71003264082c}</Project>
-      <Name>testapphaha</Name>
+      <Name>Records.App</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

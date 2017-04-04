@@ -4,9 +4,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using testapphaha.Utilities;
+using Records.App.Utilities;
 
-namespace testapphaha.Models
+namespace Records.App.Models
 {
     public class RecordModel
     {
@@ -25,8 +25,8 @@ namespace testapphaha.Models
             Artist = substrings[0];
             Title = substrings[1];
             Usages = substrings[2].Split(delimiter2).Select(x=>x.Trim()).ToList();
-            StartDate = DateUtilities.parseDate(substrings[3]);
-            EndDate = !string.IsNullOrEmpty(substrings[4]) ? (DateTime?)DateUtilities.parseDate(substrings[4]) : null;
+            StartDate = Utilities.Utilities.parseDate(substrings[3]);
+            EndDate = !string.IsNullOrEmpty(substrings[4]) ? (DateTime?)Utilities.Utilities.parseDate(substrings[4]) : null;
             OriginalStringRead = line;
             OriginalStartDate = substrings[3];
             OriginalEndDate = substrings[4];
@@ -55,22 +55,8 @@ namespace testapphaha.Models
 
         public bool isAllowedUsage(string usage)
         {
-            return Usages.Any(x => usage.ToString()== x.ToString());
+            return Usages.Any(x => usage== x);
 
-        }
-
-        /// <summary>
-        /// Override version of the ToString method to output dates in the format like "1st Mar 2017"
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return string.Format("{0}|{1}|{2}|{3}|{4}",
-                Artist,
-                Title,
-                string.Join(",", Usages.ToArray()),
-                OriginalStartDate,
-                OriginalEndDate);
         }
     }
 }

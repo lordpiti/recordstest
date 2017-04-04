@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace testapphaha.Models
+namespace Records.App.Models
 {
     public class LicenseModel
     {
