@@ -28,6 +28,8 @@ namespace testapphaha.Models
             StartDate = DateUtilities.parseDate(substrings[3]);
             EndDate = !string.IsNullOrEmpty(substrings[4]) ? (DateTime?)DateUtilities.parseDate(substrings[4]) : null;
             OriginalStringRead = line;
+            OriginalStartDate = substrings[3];
+            OriginalEndDate = substrings[4];
         }
 
         public string Artist { get; set; }
@@ -41,6 +43,10 @@ namespace testapphaha.Models
         public DateTime? EndDate { get; set; }
 
         public string OriginalStringRead { get; set; }
+
+        public string OriginalStartDate { get; set; }
+
+        public string OriginalEndDate { get; set; }
 
         public bool isAllowedDate(DateTime date)
         {
@@ -56,14 +62,14 @@ namespace testapphaha.Models
         /// Override version of the ToString method to output dates in the format like "1st Mar 2017"
         /// </summary>
         /// <returns></returns>
-        //public override string ToString()
-        //{
-        //    return string.Format("{0}|{1}|{2}|{3}|{4}", 
-        //        Artist, 
-        //        Title, 
-        //        string.Join(",", Usages.ToArray()), 
-        //        DateUtilities.FormatSpecialDateTime(StartDate), 
-        //        DateUtilities.FormatSpecialDateTime(EndDate));
-        //}
+        public override string ToString()
+        {
+            return string.Format("{0}|{1}|{2}|{3}|{4}",
+                Artist,
+                Title,
+                string.Join(",", Usages.ToArray()),
+                OriginalStartDate,
+                OriginalEndDate);
+        }
     }
 }

@@ -23,9 +23,9 @@ namespace testapphaha.Models
             var file1Path = args[0];
             var file2Path = args[1];
 
-            string[] linesRecords = File.ReadAllLines(@"C:\testapphaha\testapphaha\InputFiles\input1.txt", Encoding.UTF8);
+            string[] linesRecords = File.ReadAllLines(file1Path, Encoding.UTF8);
 
-            string[] linesLicenses = File.ReadAllLines(@"C:\testapphaha\testapphaha\InputFiles\input2.txt", Encoding.UTF8);
+            string[] linesLicenses = File.ReadAllLines(file2Path, Encoding.UTF8);
 
             var relevantLinesRecords = linesRecords.Skip(3);
             var relevantLinesLicenses = linesLicenses.Skip(3);
@@ -45,7 +45,22 @@ namespace testapphaha.Models
             var result = this.recordList.Where(x => x.isAllowedDate(date) && x.isAllowedUsage(licenceTypeString))
                 .OrderBy(x=>x.Artist).ThenBy(x=>x.Title);
 
-            return result.Select(x=>x.OriginalStringRead);
+            var finalList = new List<RecordModel>();
+
+            foreach (var item in result)
+            {
+                var newItem = new RecordModel() {
+                    Artist = item.Artist,
+                    Usages = new List<string> { licenceTypeString },
+                    Title = item.Title,
+                    OriginalStartDate = item.OriginalStartDate,
+                    OriginalEndDate = item.OriginalEndDate
+                };
+
+                finalList.Add(newItem);
+            }
+
+            return finalList.Select(x=>x.ToString());
         }
     }
 }

@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using testapphaha;
 using testapphaha.Utilities;
+using testapphaha.Models;
+using System.Linq;
 
 namespace UnitTestProject1
 {
@@ -33,11 +35,22 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void Test_GetItems()
+        public void Test_GetItems_ReturnTestCase1Output()
         {
-            var list = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" }; 
+            var inputFiles = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" };
 
-            var hh = new RecordLicenser()
+            var recordLicenser = new RecordLicenser(inputFiles);
+
+            var expected = new string[] {
+                "Monkey Claw|Black Mountain|digital download|1st Feb 2012|",
+                "Monkey Claw|Motor Mouth|digital download|1st Mar 2011|",
+                "Tinie Tempah|Frisky (Live from SoHo)|digital download|1st Feb 2012|",
+                "Tinie Tempah|Miami 2 Ibiza|digital download|1st Feb 2012|"
+            };
+
+            var outputLines = recordLicenser.getValidOnes("ITunes", "1st March 2012").ToArray();
+
+            CollectionAssert.AreEqual(expected, outputLines);
         }
 
     }
