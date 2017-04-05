@@ -1,5 +1,0 @@
-C:\repos\recordstest\testapphaha\bin\Release\testapphaha.exe.config
-C:\repos\recordstest\testapphaha\bin\Release\testapphaha.exe
-C:\repos\recordstest\testapphaha\bin\Release\testapphaha.pdb
-C:\repos\recordstest\testapphaha\obj\Release\testapphaha.exe
-C:\repos\recordstest\testapphaha\obj\Release\testapphaha.pdb

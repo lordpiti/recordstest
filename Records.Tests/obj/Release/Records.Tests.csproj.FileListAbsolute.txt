@@ -5,3 +5,10 @@ C:\repos\recordstest\UnitTestProject1\bin\Release\testapphaha.pdb
 C:\repos\recordstest\UnitTestProject1\obj\Release\Records.Tests.csprojResolveAssemblyReference.cache
 C:\repos\recordstest\UnitTestProject1\obj\Release\UnitTestProject1.dll
 C:\repos\recordstest\UnitTestProject1\obj\Release\UnitTestProject1.pdb
+C:\repos\recordstest\Records.Tests\bin\Release\UnitTestProject1.dll
+C:\repos\recordstest\Records.Tests\bin\Release\UnitTestProject1.pdb
+C:\repos\recordstest\Records.Tests\bin\Release\testapphaha.exe
+C:\repos\recordstest\Records.Tests\bin\Release\testapphaha.pdb
+C:\repos\recordstest\Records.Tests\obj\Release\Records.Tests.csprojResolveAssemblyReference.cache
+C:\repos\recordstest\Records.Tests\obj\Release\UnitTestProject1.dll
+C:\repos\recordstest\Records.Tests\obj\Release\UnitTestProject1.pdb

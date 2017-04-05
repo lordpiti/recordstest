@@ -56,7 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\testapphaha\Records.App.csproj">
+    <ProjectReference Include="..\Records.App\Records.App.csproj">
       <Project>{0469f354-c92f-4224-a38a-71003264082c}</Project>
       <Name>Records.App</Name>
     </ProjectReference>

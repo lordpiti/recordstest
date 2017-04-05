@@ -4,3 +4,6 @@ C:\repos\recordstest\testapphaha\bin\Debug\testapphaha.exe.config
 C:\repos\recordstest\testapphaha\bin\Debug\testapphaha.exe
 C:\repos\recordstest\testapphaha\bin\Debug\testapphaha.pdb
 C:\repos\recordstest\testapphaha\obj\Debug\Records.App.csprojResolveAssemblyReference.cache
+C:\repos\recordstest\Records.App\bin\Debug\testapphaha.exe.config
+C:\repos\recordstest\Records.App\obj\Debug\testapphaha.exe
+C:\repos\recordstest\Records.App\obj\Debug\testapphaha.pdb

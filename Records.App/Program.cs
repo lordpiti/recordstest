@@ -16,7 +16,7 @@ namespace Records.App
                 {
                     Console.WriteLine("Enter provider and date with the format: <partner name> <date in 'd MMM yyyy' or 'd MMMM yyyy'>");
 
-                    //args = new string[] { @"C:\testapphaha\testapphaha\InputFiles\input1.txt", @"C:\testapphaha\testapphaha\InputFiles\input2.txt" };
+                    //args = new string[] { @"C:\repos\recordsTest\Records.App\InputFiles\input1.txt", @"C:\repos\recordsTest\Records.App\InputFiles\input2.txt" };
 
                     var partnerAndDate = Console.ReadLine();
 
